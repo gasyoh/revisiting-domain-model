@@ -86,7 +86,7 @@ function saveCartItem(cartItemRepository: CartItemRepository): SaveCartItem {
                 quantity: cartItem.quantity
             })
         } else {
-            cartItemRepository.insert({
+            cartItemRepository.update({
                 cartId: cartItem.cartId,
                 productId: cartItem.product.id,
                 quantity: cartItem.quantity
