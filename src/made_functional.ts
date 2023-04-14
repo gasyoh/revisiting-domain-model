@@ -70,7 +70,7 @@ function parseAddableCartItem(
             throw Error(`商品数の上限に達しています`)
         }
         return {
-            isNew: cartRepository.isInCart(cartItem.cartId, cartItem.productId),
+            isNew: !cartRepository.isInCart(cartItem.cartId, cartItem.productId),
             cartId: cartItem.cartId,
             product: productRepository.findOnSale(cartItem.productId),
             quantity: cartItem.quantity,
